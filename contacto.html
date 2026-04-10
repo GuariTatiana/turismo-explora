@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - TurismoExplora</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- El header y footer se cargan con JS -->
+    
+    <main>
+        <section class="contacto-header">
+            <h1>Contactanos</h1>
+            <p>Completá el formulario y te responderemos a la brevedad</p>
+        </section>
+
+        <section class="contacto-form-section">
+            <div class="form-container">
+                <form id="contactoForm" class="contacto-form" novalidate>
+                    <div class="form-grid">
+                        <!-- Nombre -->
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required minlength="3" pattern="[A-Za-záéíóúñÑÁÉÍÓÚ\s]+">
+                            <span class="error-message">Ingresá un nombre válido (mínimo 3 caracteres)</span>
+                            <span class="valid-message">✓ Correcto</span>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message">Ingresá un email válido (ej: nombre@dominio.com)</span>
+                            <span class="valid-message">✓ Correcto</span>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" pattern="[0-9+\s\-]{8,20}">
+                            <span class="error-message">Ingresá un número válido (mínimo 8 dígitos)</span>
+                            <span class="valid-message">✓ Correcto</span>
+                        </div>
+
+                        <!-- Destino -->
+                        <div class="form-group">
+                            <label for="destino">Destino de interés *</label>
+                            <select id="destino" name="destino" required>
+                                <option value="">Seleccioná un destino</option>
+                                <option value="machu-picchu">Machu Picchu, Perú</option>
+                                <option value="cancun">Cancún, México</option>
+                                <option value="amazonas">Amazonas, Brasil</option>
+                                <option value="lima">Lima, Perú</option>
+                                <option value="cataratas">Cataratas del Iguazú, Argentina</option>
+                                <option value="chichen">Chichén Itzá, México</option>
+                                <option value="vaticano">Ciudad del Vaticano, Italia</option>
+                            </select>
+                            <span class="error-message">Seleccioná un destino</span>
+                            <span class="valid-message">✓ Correcto</span>
+                        </div>
+
+                        <!-- Fecha -->
+                        <div class="form-group">
+                            <label for="fecha">Fecha de viaje *</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                            <span class="error-message">Seleccioná una fecha futura</span>
+                            <span class="valid-message">✓ Correcto</span>
+                        </div>
+
+                        <!-- Personas -->
+                        <div class="form-group">
+                            <label for="personas">Cantidad de personas *</label>
+                            <input type="number" id="personas" name="personas" min="1" max="10" value="1" required>
+                            <span class="error-message">Mínimo 1, máximo 10 personas</span>
+                            <span class="valid-message">✓ Correcto</span>
+                        </div>
+
+                        <!-- Mensaje -->
+                        <div class="form-group full-width">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required minlength="10"></textarea>
+                            <span class="error-message">Escribí un mensaje de al menos 10 caracteres</span>
+                            <span class="valid-message">✓ Correcto</span>
+                        </div>
+
+                        <!-- Términos -->
+                        <div class="form-group full-width checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terminos" name="terminos" required>
+                                <span>Acepto los <a href="#">términos y condiciones</a> *</span>
+                            </label>
+                            <span class="error-message">Debés aceptar los términos y condiciones</span>
+                        </div>
+
+                        <!-- Botón enviar -->
+                        <div class="form-group full-width">
+                            <button type="submit" class="btn-submit" id="submitBtn">
+                                <span class="btn-text">Enviar mensaje</span>
+                                <div class="spinner" id="spinner"></div>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Información de contacto adicional -->
+            <div class="info-contacto">
+                <h3>Otros medios de contacto</h3>
+                <div class="info-items">
+                    <div class="info-item">
+                        <span class="info-icon">📞</span>
+                        <div>
+                            <strong>Teléfono</strong>
+                            <p>+54 11 1234-5678</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">✉️</span>
+                        <div>
+                            <strong>Email</strong>
+                            <p>info@turismoexplora.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <div>
+                            <strong>Oficina</strong>
+                            <p>Av. Corrientes 1234, CABA, Argentina</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">⏰</span>
+                        <div>
+                            <strong>Horario</strong>
+                            <p>Lun a Vie 9:00 - 18:00 hs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de confirmación -->
+    <div id="modalConfirmacion" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">✅</div>
+            <h2>¡Mensaje enviado!</h2>
+            <p>Gracias por contactarte con nosotros.</p>
+            <p>Te responderemos a la brevedad.</p>
+            <button class="modal-btn" id="closeModal">Cerrar</button>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="js/components.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/contacto.js"></script>
+</body>
+</html>
