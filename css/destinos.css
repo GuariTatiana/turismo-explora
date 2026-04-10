@@ -312,3 +312,181 @@
         font-size: 1.8rem;
     }
 }
+
+
+
+/* ========== TARJETAS CON ZOOM Y OVERLAY ========== */
+.tarjetas-section {
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.tarjetas-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.tarjetas-section > p {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+.tarjetas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* Tarjeta */
+.tarjeta {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Contenedor de la imagen (para el zoom y overlay) */
+.tarjeta-img-container {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.tarjeta-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* ZOOM al hacer hover */
+.tarjeta:hover .tarjeta-img {
+    transform: scale(1.15);
+}
+
+/* OVERLAY (aparece al hacer hover) */
+.tarjeta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.tarjeta:hover .tarjeta-overlay {
+    opacity: 1;
+}
+
+.overlay-precio {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: rgba(231, 76, 60, 0.9);
+    padding: 8px 20px;
+    border-radius: 50px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta:hover .overlay-precio {
+    transform: translateY(0);
+}
+
+.overlay-btn {
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.tarjeta:hover .overlay-btn {
+    transform: translateY(0);
+}
+
+.overlay-btn:hover {
+    background-color: var(--color-accent);
+    transform: scale(1.05);
+}
+
+/* Información de la tarjeta */
+.tarjeta-info {
+    padding: 20px;
+}
+
+.tarjeta-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: var(--color-secondary);
+}
+
+.tarjeta-rating {
+    margin-bottom: 12px;
+    color: #f39c12;
+    letter-spacing: 2px;
+}
+
+.tarjeta-info p {
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.tarjeta-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.tarjeta-ubicacion, .tarjeta-duracion {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tarjetas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tarjetas-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .overlay-precio {
+        font-size: 1.3rem;
+        padding: 5px 15px;
+    }
+    
+    .overlay-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+}
