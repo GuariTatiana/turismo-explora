@@ -14,3 +14,269 @@
     font-size: 1.2rem;
     opacity: 0.9;
 }
+
+
+
+/* ========== FLIP CARDS ========== */
+.flip-section {
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.flip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* Contenedor de la flip card */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 420px;
+    perspective: 1000px;
+}
+
+/* Inner que rota */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+    border-radius: 16px;
+}
+
+/* Hover: rota la tarjeta */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Frente y dorso (posición absoluta para que se superpongan) */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    padding: 30px 20px;
+    box-shadow: var(--shadow-md);
+}
+
+/* FRENTE */
+.flip-card-front {
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-card));
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+}
+
+.card-logo {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.flip-card-front h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--color-secondary);
+}
+
+.card-categoria {
+    color: var(--color-accent);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card-experiencia {
+    margin-top: 15px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* DORSO */
+.flip-card-back {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flip-card-back h4 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.flip-card-back p {
+    margin: 10px 0;
+    font-size: 0.95rem;
+}
+
+.contact-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: var(--color-primary);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    transform: scale(1.05);
+    background-color: var(--color-accent);
+    color: white;
+}
+
+/* ========== RATING ESTÁTICO (en las tarjetas) ========== */
+.rating-static {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 15px 0;
+}
+
+.rating-static .star {
+    font-size: 1.5rem;
+    color: #ddd;
+}
+
+.rating-static .star.filled {
+    color: #f39c12;
+}
+
+.rating-static .star.half {
+    color: #f39c12;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 0.75em;
+}
+
+/* ========== RATING INTERACTIVO (CSS-ONLY) ========== */
+.rating-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--bg-section), var(--bg-card));
+    margin: 40px 0;
+}
+
+.rating-section h2 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.rating-interactivo {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--bg-card);
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+}
+
+/* Contenedor de estrellas interactivas */
+.stars-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Ocultar los radios */
+.stars-container input {
+    display: none;
+}
+
+/* Estilo de las etiquetas (estrellas) */
+.stars-container label {
+    font-size: 2.5rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover: estrellas hacia la izquierda se llenan */
+.stars-container label:hover,
+.stars-container label:hover ~ label {
+    color: #f39c12;
+    transform: scale(1.1);
+}
+
+/* Cuando un radio está checked, llenar sus estrellas y las anteriores */
+.stars-container input:checked ~ label {
+    color: #f39c12;
+}
+
+/* Animación de las estrellas al hacer clic */
+.stars-container label {
+    animation: starPulse 0.3s ease;
+}
+
+@keyframes starPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.rating-mensaje {
+    margin-top: 20px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .agencias-header h1 {
+        font-size: 2rem;
+    }
+    
+    .flip-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .flip-card {
+        height: 400px;
+    }
+    
+    .stars-container label {
+        font-size: 2rem;
+    }
+    
+    .rating-section h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .flip-card-front h3 {
+        font-size: 1.2rem;
+    }
+    
+    .card-logo {
+        font-size: 3rem;
+    }
+    
+    .stars-container label {
+        font-size: 1.5rem;
+    }
+}
