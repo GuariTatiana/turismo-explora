@@ -490,3 +490,150 @@
         font-size: 0.9rem;
     }
 }
+
+
+/* ========== TABLA RESPONSIVA ========== */
+.tabla-section {
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.tabla-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.tabla-section > p {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* Contenedor con overflow para scroll horizontal en móvil */
+.tabla-container {
+    overflow-x: auto;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+}
+
+/* Estilo de la tabla */
+.tabla-precios {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.tabla-precios thead tr {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+}
+
+.tabla-precios th,
+.tabla-precios td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tabla-precios th {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.tabla-precios tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto hover en filas */
+.tabla-precios tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+    transform: scale(1.01);
+}
+
+/* Resaltar columna de precios */
+.tabla-precios .precio {
+    font-weight: bold;
+    color: var(--color-accent);
+    font-size: 1.1rem;
+}
+
+/* Última fila sin borde */
+.tabla-precios tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ========== TABLA RESPONSIVA (MÓVIL) ========== */
+@media (max-width: 768px) {
+    .tabla-precios thead {
+        display: none;
+    }
+    
+    .tabla-precios,
+    .tabla-precios tbody,
+    .tabla-precios tr,
+    .tabla-precios td {
+        display: block;
+        width: 100%;
+    }
+    
+    .tabla-precios tr {
+        margin-bottom: 20px;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        background-color: var(--bg-card);
+        overflow: hidden;
+    }
+    
+    .tabla-precios td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 15px;
+        border-bottom: 1px solid var(--border-color);
+        text-align: right;
+    }
+    
+    .tabla-precios td:last-child {
+        border-bottom: none;
+    }
+    
+    /* Etiqueta que aparece antes de cada dato en móvil */
+    .tabla-precios td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: var(--color-secondary);
+        text-align: left;
+        flex: 1;
+    }
+    
+    .tabla-precios td .precio {
+        text-align: right;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .tabla-precios th,
+    .tabla-precios td {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Efecto de resaltado al pasar por filas (escritorio) */
+@media (min-width: 769px) {
+    .tabla-precios tbody tr {
+        transition: all 0.3s ease;
+    }
+    
+    .tabla-precios tbody tr:hover {
+        background-color: rgba(52, 152, 219, 0.15);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+}
