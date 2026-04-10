@@ -1,0 +1,159 @@
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablets */
+@media (max-width: 992px) {
+    :root {
+        --font-size-base: 15px;
+        --spacing-lg: 2rem;
+        --spacing-xl: 3rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .counter-number {
+        font-size: 3.5rem;
+    }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+    /* Header responsive */
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-header);
+        padding: var(--spacing-md);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background-color: rgba(255, 255, 255, 0.1);
+        margin-top: var(--spacing-xs);
+        display: none;
+        box-shadow: none;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+    
+    /* Hero responsive */
+    .hero {
+        height: 70vh;
+        min-height: 500px;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .hero-btn {
+        padding: var(--spacing-xs) var(--spacing-md);
+    }
+    
+    /* Cards responsive */
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    /* Footer responsive */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .form-group {
+        flex-direction: column;
+    }
+    
+    .social-links {
+        align-items: center;
+    }
+    
+    .social-link:hover {
+        transform: translateX(0) scale(1.05);
+    }
+    
+    /* Testimonios */
+    .testimonio-card {
+        min-width: 280px;
+    }
+    
+    .counter-number {
+        font-size: 2.5rem;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .header-container {
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .logo h1 {
+        font-size: 1rem;
+    }
+    
+    .logo img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .dark-mode-toggle {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .destinos-destacados h2,
+    .testimonios h2 {
+        font-size: 1.8rem;
+    }
+    
+    .card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Modo oscuro responsive */
+body.dark-mode .main-nav.active {
+    background-color: var(--bg-header);
+    border-top: 1px solid var(--border-color);
+}

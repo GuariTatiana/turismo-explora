@@ -1,0 +1,172 @@
+/* ========== MODO OSCURO COMPLETO ========== */
+
+/* Variables para modo oscuro */
+body.dark-mode {
+    /* Fondos */
+    --bg-body: #1a1a2e;
+    --bg-header: #0f0f1a;
+    --bg-footer: #0a0a14;
+    --bg-card: #16213e;
+    --bg-section: #0f0f1a;
+    
+    /* Textos */
+    --text-color: #eeeeee;
+    --text-light: #bbbbbb;
+    --text-muted: #888888;
+    
+    /* Bordes */
+    --border-color: #333333;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    
+    /* Elementos específicos */
+    --color-light: #1a1a2e;
+}
+
+/* Aplicar cambios a TODOS los elementos */
+body.dark-mode {
+    background-color: var(--bg-body);
+    color: var(--text-color);
+}
+
+/* Header en modo oscuro */
+body.dark-mode .main-header {
+    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .nav-link {
+    color: #eeeeee;
+}
+
+body.dark-mode .dropdown-menu {
+    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+    border: 1px solid #333333;
+}
+
+/* Footer en modo oscuro */
+body.dark-mode .main-footer {
+    background-color: #0a0a14;
+}
+
+body.dark-mode .footer-section h3 {
+    color: #3498db;
+}
+
+body.dark-mode .social-link {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .social-link:hover {
+    background-color: #3498db;
+}
+
+/* Tarjetas en modo oscuro */
+body.dark-mode .card {
+    background-color: #16213e;
+    border: 1px solid #333333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .card p {
+    color: #bbbbbb;
+}
+
+/* Sección de testimonios en modo oscuro */
+body.dark-mode .testimonios {
+    background-color: #0f0f1a;
+}
+
+body.dark-mode .testimonio-card {
+    background-color: #16213e;
+    border: 1px solid #333333;
+}
+
+body.dark-mode .testimonio-texto {
+    color: #dddddd;
+}
+
+/* Hero section en modo oscuro */
+body.dark-mode .hero-overlay {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+}
+
+/* Contador en modo oscuro */
+body.dark-mode .counter-section {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+/* Formularios en modo oscuro */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: #0f0f1a;
+    color: #eeeeee;
+    border: 1px solid #333333;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #888888;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Botones en modo oscuro */
+body.dark-mode .btn-primary {
+    background-color: #3498db;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #2980b9;
+}
+
+/* Tablas en modo oscuro */
+body.dark-mode table {
+    background-color: #16213e;
+    color: #eeeeee;
+}
+
+body.dark-mode th {
+    background-color: #0f0f1a;
+    border-color: #333333;
+}
+
+body.dark-mode td {
+    border-color: #333333;
+}
+
+/* Scrollbar en modo oscuro */
+body.dark-mode::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+body.dark-mode::-webkit-scrollbar-track {
+    background: #1a1a2e;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb {
+    background: #3498db;
+    border-radius: 5px;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb:hover {
+    background: #2980b9;
+}
+
+/* Transición suave para TODO */
+body.dark-mode,
+body.dark-mode * {
+    transition: background-color 0.3s ease, 
+                color 0.3s ease, 
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
