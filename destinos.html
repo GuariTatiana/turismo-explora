@@ -23,10 +23,131 @@
             <p>Descubrí los mejores lugares para tu próxima aventura</p>
         </section>
         
+    <!-- Sistema de filtros (solo CSS) -->
+    <!-- Filtros por categoría -->
+    <section class="filtros-section">
+        <h2>Explorar por categoría</h2>
         
+        <!-- Radios ocultos con IDs -->
+        <input type="radio" name="categoria" id="filtro-todos" checked class="filtro-radio">
+        <input type="radio" name="categoria" id="filtro-cultural" class="filtro-radio">
+        <input type="radio" name="categoria" id="filtro-naturaleza" class="filtro-radio">
+        <input type="radio" name="categoria" id="filtro-playa" class="filtro-radio">
+        <input type="radio" name="categoria" id="filtro-gastronomico" class="filtro-radio">
+        <input type="radio" name="categoria" id="filtro-religioso" class="filtro-radio">
+        
+        <!-- Botones -->
+        <div class="filtros-buttons">
+            <label for="filtro-todos" class="filtro-btn">📌 Todos</label>
+            <label for="filtro-cultural" class="filtro-btn">🏛️ Cultural</label>
+            <label for="filtro-naturaleza" class="filtro-btn">🌿 Naturaleza</label>
+            <label for="filtro-playa" class="filtro-btn">☀️ Sol y Playa</label>
+            <label for="filtro-gastronomico" class="filtro-btn">🍽️ Gastronómico</label>
+            <label for="filtro-religioso" class="filtro-btn">⛪ Religioso</label>
+        </div>
+
+        <!-- Grid de destinos -->
+        <div class="destinos-grid">
+            <!-- Cultural -->
+            <div class="destino-card" data-categoria="cultural">
+                <img src="https://via.placeholder.com/400x300" alt="Machu Picchu" class="destino-img">
+                <div class="destino-info">
+                    <h3>Machu Picchu</h3>
+                    <p>Patrimonio de la Humanidad</p>
+                    <span class="destino-precio">$899</span>
+                </div>
+            </div>
+            
+            <div class="destino-card" data-categoria="cultural">
+                <img src="https://via.placeholder.com/400x300" alt="Chichén Itzá" class="destino-img">
+                <div class="destino-info">
+                    <h3>Chichén Itzá</h3>
+                    <p>Maravilla del mundo maya</p>
+                    <span class="destino-precio">$999</span>
+                </div>
+            </div>
+
+            <!-- Naturaleza -->
+            <div class="destino-card" data-categoria="naturaleza">
+                <img src="https://via.placeholder.com/400x300" alt="Amazonas" class="destino-img">
+                <div class="destino-info">
+                    <h3>Amazonas</h3>
+                    <p>Selva y biodiversidad única</p>
+                    <span class="destino-precio">$1,099</span>
+                </div>
+            </div>
+            
+            <div class="destino-card" data-categoria="naturaleza">
+                <img src="https://via.placeholder.com/400x300" alt="Cataratas" class="destino-img">
+                <div class="destino-info">
+                    <h3>Cataratas del Iguazú</h3>
+                    <p>Impresionantes cataratas</p>
+                    <span class="destino-precio">$799</span>
+                </div>
+            </div>
+
+            <!-- Playa -->
+            <div class="destino-card" data-categoria="playa">
+                <img src="https://via.placeholder.com/400x300" alt="Cancún" class="destino-img">
+                <div class="destino-info">
+                    <h3>Cancún</h3>
+                    <p>Playas de arena blanca</p>
+                    <span class="destino-precio">$1,299</span>
+                </div>
+            </div>
+            
+            <div class="destino-card" data-categoria="playa">
+                <img src="https://via.placeholder.com/400x300" alt="Riviera Maya" class="destino-img">
+                <div class="destino-info">
+                    <h3>Riviera Maya</h3>
+                    <p>Paradisiaco caribe mexicano</p>
+                    <span class="destino-precio">$1,199</span>
+                </div>
+            </div>
+
+            <!-- Gastronómico -->
+            <div class="destino-card" data-categoria="gastronomico">
+                <img src="https://via.placeholder.com/400x300" alt="Lima" class="destino-img">
+                <div class="destino-info">
+                    <h3>Lima</h3>
+                    <p>Capital gastronómica de América</p>
+                    <span class="destino-precio">$899</span>
+                </div>
+            </div>
+            
+            <div class="destino-card" data-categoria="gastronomico">
+                <img src="https://via.placeholder.com/400x300" alt="Oaxaca" class="destino-img">
+                <div class="destino-info">
+                    <h3>Oaxaca</h3>
+                    <p>Sazón tradicional mexicana</p>
+                    <span class="destino-precio">$749</span>
+                </div>
+            </div>
+
+            <!-- Religioso -->
+            <div class="destino-card" data-categoria="religioso">
+                <img src="https://via.placeholder.com/400x300" alt="Vaticano" class="destino-img">
+                <div class="destino-info">
+                    <h3>Ciudad del Vaticano</h3>
+                    <p>Corazón de la cristiandad</p>
+                    <span class="destino-precio">$1,499</span>
+                </div>
+            </div>
+            
+            <div class="destino-card" data-categoria="religioso">
+                <img src="https://via.placeholder.com/400x300" alt="Fátima" class="destino-img">
+                <div class="destino-info">
+                    <h3>Fátima</h3>
+                    <p>Santuario de peregrinación</p>
+                    <span class="destino-precio">$1,299</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
         
     </main>
-    
+
     <!-- Scripts -->
     <script src="js/components.js"></script>
     <script src="js/dark-mode.js"></script>
