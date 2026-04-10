@@ -98,6 +98,52 @@
     margin-top: var(--spacing-xs);
     letter-spacing: 1px;
 }
+/* ANIMACIÓN CON CSS KEYFRAMES */
+.counter-number.animate {
+    animation: counterPop 0.5s ease-out, counterGlow 1s ease-in-out;
+}
+
+@keyframes counterPop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes counterGlow {
+    0% {
+        text-shadow: 0 0 0px rgba(255,255,255,0);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255,255,255,0.8);
+    }
+    100% {
+        text-shadow: 0 0 0px rgba(255,255,255,0);
+    }
+}
+
+/* Pulsación continua después de animar */
+.counter-number.pulse {
+    animation: counterPulse 2s infinite;
+}
+
+@keyframes counterPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+        color: #4e56755d;
+    }
+}
+
 
 /* ========== DESTINOS DESTACADOS ========== */
 .destinos-destacados {
