@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurismoExplora - Tu próxima aventura</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- El header y footer se cargan con JS -->
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <video class="hero-video" autoplay muted loop>
+                <source src="assets/videos/hero-background.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2>Descubrí tu próxima aventura</h2>
+                <p>Los destinos más increíbles al mejor precio</p>
+                <a href="destinos.html" class="hero-btn">Explorar Destinos →</a>
+            </div>
+        </section>
+        
+        <!-- Contador Animado -->
+        <section class="counter-section">
+            <div class="counter-container">
+                <div class="counter-number" id="contadorVisitantes">500+</div>
+                <div class="counter-label">Visitantes felices</div>
+            </div>
+        </section>
+        
+        <!-- Destinos Destacados -->
+        <section class="destinos-destacados">
+            <h2>Destinos Destacados</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="https://via.placeholder.com/400x250" alt="Machu Picchu" class="card-img">
+                        <span class="card-badge">Cultural</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Machu Picchu</h3>
+                        <p>Descubrí la maravilla del mundo incaico</p>
+                        <div class="card-price">$899</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="https://via.placeholder.com/400x250" alt="Playa del Carmen" class="card-img">
+                        <span class="card-badge">Sol y Playa</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Playa del Carmen</h3>
+                        <p>Playas paradisíacas y arena blanca</p>
+                        <div class="card-price">$1,299</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="https://via.placeholder.com/400x250" alt="Amazonas" class="card-img">
+                        <span class="card-badge">Naturaleza</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Amazonas</h3>
+                        <p>Aventura en la selva más grande del mundo</p>
+                        <div class="card-price">$1,099</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonios Carrusel -->
+        <section class="testimonios">
+            <h2>Lo que dicen nuestros viajeros</h2>
+            <div class="carrusel-container">
+                <div class="carrusel">
+                    <div class="testimonio-card">
+                        <div class="testimonio-avatar">⭐</div>
+                        <p class="testimonio-texto">"Increíble experiencia, todo perfectamente organizado"</p>
+                        <p class="testimonio-nombre">María González</p>
+                        <p class="testimonio-ubicacion">Buenos Aires, Argentina</p>
+                    </div>
+                    <div class="testimonio-card">
+                        <div class="testimonio-avatar">🏔️</div>
+                        <p class="testimonio-texto">"Los destinos son espectaculares, volvería sin dudarlo"</p>
+                        <p class="testimonio-nombre">Carlos López</p>
+                        <p class="testimonio-ubicacion">Santiago, Chile</p>
+                    </div>
+                    <div class="testimonio-card">
+                        <div class="testimonio-avatar">🌴</div>
+                        <p class="testimonio-texto">"Excelente atención y los mejores precios del mercado"</p>
+                        <p class="testimonio-nombre">Laura Martínez</p>
+                        <p class="testimonio-ubicacion">Lima, Perú</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Scripts -->
+    <script src="js/components.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/counter.js"></script>
+</body>
+</html>
