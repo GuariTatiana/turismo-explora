@@ -14,3 +14,292 @@
     font-size: 1.2rem;
     opacity: 0.9;
 }
+
+
+
+/* ========== TABLA DE PRECIOS ========== */
+.tabla-section {
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.tabla-container {
+    overflow-x: auto;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+}
+
+.tabla-precios {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.tabla-precios thead tr {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+}
+
+.tabla-precios th,
+.tabla-precios td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tabla-precios th {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* ========== EFECTO DE RESALTADO AL HACER HOVER ========== */
+.tabla-precios tbody tr {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Resaltado de fila completa */
+.tabla-precios tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Resaltado específico de celdas de precio */
+.tabla-precios tbody tr:hover .precio {
+    color: var(--color-accent);
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+
+/* Efecto especial en celda de precio al pasar cursor */
+.tabla-precios .precio {
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.tabla-precios .precio:hover {
+    background-color: var(--color-accent);
+    color: #ffffff !important; 
+    transform: scale(1.05);
+    border-radius: 8px;
+}
+
+.destino-ubicacion {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* ========== TOOLTIPS EXPLICATIVOS ========== */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.tooltip-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color: var(--color-secondary);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    cursor: help;
+    transition: all 0.3s ease;
+}
+
+.tooltip-icon:hover {
+    background-color: var(--color-accent);
+    transform: scale(1.1);
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    background-color: var(--color-primary);
+    color: white;
+    text-align: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 100;
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+    box-shadow: var(--shadow-md);
+}
+
+/* Flecha del tooltip */
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--color-primary) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Tooltips inline (para la sección de info adicional) */
+.tooltip-inline {
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+    cursor: help;
+}
+
+.tooltip-inline .tooltip-text {
+    visibility: hidden;
+    background-color: var(--color-primary);
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.75rem;
+}
+
+.tooltip-inline:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ========== INFO ADICIONAL ========== */
+.info-adicional {
+    max-width: 1400px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
+}
+
+.info-card {
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-card));
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+.info-card h3 {
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.info-card ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.info-card li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    background-color: rgba(52, 152, 219, 0.05);
+    border-radius: 8px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .precios-header h1 {
+        font-size: 2rem;
+    }
+    
+    .tabla-precios thead {
+        display: none;
+    }
+    
+    .tabla-precios,
+    .tabla-precios tbody,
+    .tabla-precios tr,
+    .tabla-precios td {
+        display: block;
+        width: 100%;
+    }
+    
+    .tabla-precios tr {
+        margin-bottom: 20px;
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        background-color: var(--bg-card);
+        overflow: hidden;
+    }
+    
+    .tabla-precios td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 15px;
+        border-bottom: 1px solid var(--border-color);
+        text-align: right;
+    }
+    
+    .tabla-precios td:last-child {
+        border-bottom: none;
+    }
+    
+    .tabla-precios td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: var(--color-secondary);
+        text-align: left;
+        flex: 1;
+    }
+    
+    .destino-ubicacion {
+        display: inline;
+        margin-left: 8px;
+    }
+    
+    .info-card ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .tooltip .tooltip-text {
+        white-space: normal;
+        width: 200px;
+        bottom: 150%;
+    }
+}
+
+@media (max-width: 480px) {
+    .precios-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .tabla-precios td {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+    
+    .tooltip .tooltip-text {
+        width: 160px;
+        font-size: 0.7rem;
+    }
+}
