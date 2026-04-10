@@ -1,0 +1,447 @@
+/* ========== BLOG HEADER ========== */
+.blog-header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+}
+
+.blog-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.blog-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Estado inicial: oculto */
+.articulo {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+/* Estado visible: aparece */
+.articulo.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========== TAGS Y CATEGORÍAS ========== */
+.tags-section {
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.tags-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--color-primary);
+}
+
+.tag-radio {
+    display: none;
+}
+
+.tags-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.tag-btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: var(--bg-card);
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.tag-btn:hover {
+    background-color: var(--color-secondary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Filtrado por tags (solo CSS) */
+#blog-todos:checked ~ .newspaper-grid .articulo { display: block; }
+#blog-aventura:checked ~ .newspaper-grid .articulo:not([data-categoria="aventura"]) { display: none; }
+#blog-gastronomia:checked ~ .newspaper-grid .articulo:not([data-categoria="gastronomia"]) { display: none; }
+#blog-cultura:checked ~ .newspaper-grid .articulo:not([data-categoria="cultura"]) { display: none; }
+#blog-naturaleza:checked ~ .newspaper-grid .articulo:not([data-categoria="naturaleza"]) { display: none; }
+#blog-playa:checked ~ .newspaper-grid .articulo:not([data-categoria="playa"]) { display: none; }
+
+/* Botón activo */
+#blog-todos:checked ~ .tags-container label[for="blog-todos"],
+#blog-aventura:checked ~ .tags-container label[for="blog-aventura"],
+#blog-gastronomia:checked ~ .tags-container label[for="blog-gastronomia"],
+#blog-cultura:checked ~ .tags-container label[for="blog-cultura"],
+#blog-naturaleza:checked ~ .tags-container label[for="blog-naturaleza"],
+#blog-playa:checked ~ .tags-container label[for="blog-playa"] {
+    background-color: var(--color-secondary);
+    color: white;
+    border-color: var(--color-secondary);
+}
+
+/* ========== NEWSPAPER GRID ========== */
+.newspaper-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Artículo Principal */
+.articulo.principal {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.articulo {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.articulo.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.articulo:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.articulo-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.articulo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.articulo:hover .articulo-img img {
+    transform: scale(1.05);
+}
+
+.principal .articulo-img img {
+    height: 300px;
+}
+
+.articulo:not(.principal) .articulo-img img {
+    height: 200px;
+}
+
+.articulo-categoria {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--color-accent);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.articulo-content {
+    padding: 20px;
+}
+
+.articulo-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: var(--color-secondary);
+}
+
+.articulo-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--color-secondary);
+}
+
+.articulo-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.articulo-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.leer-mas {
+    display: inline-block;
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.leer-mas:hover {
+    color: var(--color-accent);
+    transform: translateX(5px);
+}
+
+/* ========== SECCIÓN DE COMENTARIOS ========== */
+.comentarios-section {
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.comentarios-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--color-primary);
+}
+
+.comentarios-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.comentario {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease;
+}
+
+.comentario:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+}
+
+/* AVATARES CREADOS CON CSS (pseudo-elementos) */
+.comentario-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+}
+
+.avatar-1::before {
+    content: "👩";
+    font-size: 2rem;
+}
+
+.avatar-2::before {
+    content: "👨";
+    font-size: 2rem;
+}
+
+.avatar-3::before {
+    content: "👩‍🦰";
+    font-size: 2rem;
+}
+
+.avatar-4::before {
+    content: "🧔";
+    font-size: 2rem;
+}
+
+.comentario-content {
+    flex: 1;
+}
+
+.comentario-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.comentario-nombre {
+    font-size: 1.1rem;
+    color: var(--color-secondary);
+}
+
+.comentario-fecha {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.comentario-rating {
+    color: #f39c12;
+    font-size: 0.9rem;
+}
+
+.comentario-content p {
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.comentario-responder {
+    background: none;
+    border: none;
+    color: var(--color-secondary);
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.comentario-responder:hover {
+    color: var(--color-accent);
+    transform: translateX(3px);
+}
+
+/* Formulario de nuevo comentario */
+.nuevo-comentario {
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-card));
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+.nuevo-comentario h3 {
+    margin-bottom: 20px;
+    color: var(--color-secondary);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.nuevo-comentario input,
+.nuevo-comentario select,
+.nuevo-comentario textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-body);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.nuevo-comentario input:focus,
+.nuevo-comentario select:focus,
+.nuevo-comentario textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.nuevo-comentario button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.nuevo-comentario button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 992px) {
+    .newspaper-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .articulo.principal {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-header h1 {
+        font-size: 2rem;
+    }
+    
+    .newspaper-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .articulo.principal {
+        grid-column: span 1;
+    }
+    
+    .principal .articulo-img img {
+        height: 220px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .comentario {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .comentario-header {
+        justify-content: center;
+    }
+    
+    .tags-container {
+        gap: 8px;
+    }
+    
+    .tag-btn {
+        padding: 6px 15px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .articulo-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .comentario-avatar {
+        width: 50px;
+        height: 50px;
+    }
+}

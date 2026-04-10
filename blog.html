@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - TurismoExplora</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- El header y footer se cargan con JS -->
+    
+    <main>
+        <section class="blog-header">
+            <h1>Blog de Viajes</h1>
+            <p>Historias, consejos y experiencias para inspirar tu próxima aventura</p>
+        </section>
+
+        <!-- Sistema de tags y categorías (filtros solo CSS) -->
+        <section class="tags-section">
+            <h2>Explorar por categoría</h2>
+            
+            <input type="radio" name="blog-categoria" id="blog-todos" checked class="tag-radio">
+            <input type="radio" name="blog-categoria" id="blog-aventura" class="tag-radio">
+            <input type="radio" name="blog-categoria" id="blog-gastronomia" class="tag-radio">
+            <input type="radio" name="blog-categoria" id="blog-cultura" class="tag-radio">
+            <input type="radio" name="blog-categoria" id="blog-naturaleza" class="tag-radio">
+            <input type="radio" name="blog-categoria" id="blog-playa" class="tag-radio">
+            
+            <div class="tags-container">
+                <label for="blog-todos" class="tag-btn">📌 Todos</label>
+                <label for="blog-aventura" class="tag-btn">🏔️ Aventura</label>
+                <label for="blog-gastronomia" class="tag-btn">🍽️ Gastronomía</label>
+                <label for="blog-cultura" class="tag-btn">🏛️ Cultura</label>
+                <label for="blog-naturaleza" class="tag-btn">🌿 Naturaleza</label>
+                <label for="blog-playa" class="tag-btn">☀️ Playa</label>
+            </div>
+
+            <!-- Grid estilo newspaper -->
+            <div class="newspaper-grid">
+                
+                <!-- Artículo Principal (destacado) -->
+                <article class="articulo principal" data-categoria="aventura">
+                    <div class="articulo-img">
+                        <img src="https://via.placeholder.com/800x500" alt="Aventura en los Andes">
+                        <span class="articulo-categoria">Aventura</span>
+                    </div>
+                    <div class="articulo-content">
+                        <h2>Los 10 destinos de aventura más increíbles para 2026</h2>
+                        <div class="articulo-meta">
+                            <span class="fecha">📅 15 de abril, 2026</span>
+                            <span class="autor">✍️ Por María González</span>
+                            <span class="lectura">⏱️ 5 min lectura</span>
+                        </div>
+                        <p>Descubrí los lugares más emocionantes para los amantes de la adrenalina. Desde senderismo en los Andes hasta rafting en el Amazonas...</p>
+                        <a href="#" class="leer-mas">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Artículo 2 -->
+                <article class="articulo" data-categoria="gastronomia">
+                    <div class="articulo-img">
+                        <img src="https://via.placeholder.com/400x250" alt="Gastronomía Peruana">
+                        <span class="articulo-categoria">Gastronomía</span>
+                    </div>
+                    <div class="articulo-content">
+                        <h3>Ruta gastronómica por Lima: los mejores restaurantes</h3>
+                        <div class="articulo-meta">
+                            <span>📅 10 de abril, 2026</span>
+                        </div>
+                        <p>Un recorrido por los sabores que hicieron de Perú la capital gastronómica de América...</p>
+                        <a href="#" class="leer-mas">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Artículo 3 -->
+                <article class="articulo" data-categoria="cultura">
+                    <div class="articulo-img">
+                        <img src="https://via.placeholder.com/400x250" alt="Machu Picchu">
+                        <span class="articulo-categoria">Cultura</span>
+                    </div>
+                    <div class="articulo-content">
+                        <h3>Guía completa para visitar Machu Picchu</h3>
+                        <div class="articulo-meta">
+                            <span>📅 5 de abril, 2026</span>
+                        </div>
+                        <p>Todo lo que necesitás saber para planificar tu visita a la ciudadela inca...</p>
+                        <a href="#" class="leer-mas">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Artículo 4 -->
+                <article class="articulo" data-categoria="naturaleza">
+                    <div class="articulo-img">
+                        <img src="https://via.placeholder.com/400x250" alt="Amazonas">
+                        <span class="articulo-categoria">Naturaleza</span>
+                    </div>
+                    <div class="articulo-content">
+                        <h3>Descubriendo la selva amazónica: un paraíso natural</h3>
+                        <div class="articulo-meta">
+                            <span>📅 28 de marzo, 2026</span>
+                        </div>
+                        <p>Explorá la biodiversidad única del pulmón del mundo...</p>
+                        <a href="#" class="leer-mas">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Artículo 5 -->
+                <article class="articulo" data-categoria="playa">
+                    <div class="articulo-img">
+                        <img src="https://via.placeholder.com/400x250" alt="Cancún">
+                        <span class="articulo-categoria">Playa</span>
+                    </div>
+                    <div class="articulo-content">
+                        <h3>Las mejores playas del Caribe mexicano</h3>
+                        <div class="articulo-meta">
+                            <span>📅 20 de marzo, 2026</span>
+                        </div>
+                        <p>Cancún, Riviera Maya, Tulum... descubrí los paraísos de arena blanca...</p>
+                        <a href="#" class="leer-mas">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Artículo 6 -->
+                <article class="articulo" data-categoria="aventura">
+                    <div class="articulo-img">
+                        <img src="https://via.placeholder.com/400x250" alt="Cataratas">
+                        <span class="articulo-categoria">Aventura</span>
+                    </div>
+                    <div class="articulo-content">
+                        <h3>Aventura en las Cataratas del Iguazú</h3>
+                        <div class="articulo-meta">
+                            <span>📅 15 de marzo, 2026</span>
+                        </div>
+                        <p>Recorridos en lancha, senderos y vistas impresionantes...</p>
+                        <a href="#" class="leer-mas">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Artículo 7 -->
+                <article class="articulo" data-categoria="gastronomia">
+                    <div class="articulo-img">
+                        <img src="https://via.placeholder.com/400x250" alt="Ceviche">
+                        <span class="articulo-categoria">Gastronomía</span>
+                    </div>
+                    <div class="articulo-content">
+                        <h3>El ceviche: historia y mejores lugares para probarlo</h3>
+                        <div class="articulo-meta">
+                            <span>📅 10 de marzo, 2026</span>
+                        </div>
+                        <p>Un viaje por el plato más representativo de la cocina peruana...</p>
+                        <a href="#" class="leer-mas">Leer más →</a>
+                    </div>
+                </article>
+
+                <!-- Artículo 8 -->
+                <article class="articulo" data-categoria="cultura">
+                    <div class="articulo-img">
+                        <img src="https://via.placeholder.com/400x250" alt="Chichén Itzá">
+                        <span class="articulo-categoria">Cultura</span>
+                    </div>
+                    <div class="articulo-content">
+                        <h3>Chichén Itzá: la maravilla maya que debés conocer</h3>
+                        <div class="articulo-meta">
+                            <span>📅 5 de marzo, 2026</span>
+                        </div>
+                        <p>Historia, arquitectura y misterios de esta imponente ciudad...</p>
+                        <a href="#" class="leer-mas">Leer más →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección de comentarios con avatares CSS -->
+        <section class="comentarios-section">
+            <h2>Comentarios de nuestros lectores</h2>
+            
+            <div class="comentarios-grid">
+                <!-- Comentario 1 -->
+                <div class="comentario">
+                    <div class="comentario-avatar avatar-1"></div>
+                    <div class="comentario-content">
+                        <div class="comentario-header">
+                            <strong class="comentario-nombre">Ana Martínez</strong>
+                            <span class="comentario-fecha">Hace 2 días</span>
+                            <div class="comentario-rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <p>"Excelente artículo, muy informativo. Me ayudó mucho a planificar mi viaje a Machu Picchu. ¡Gracias!"</p>
+                        <button class="comentario-responder">Responder</button>
+                    </div>
+                </div>
+
+                <!-- Comentario 2 -->
+                <div class="comentario">
+                    <div class="comentario-avatar avatar-2"></div>
+                    <div class="comentario-content">
+                        <div class="comentario-header">
+                            <strong class="comentario-nombre">Carlos López</strong>
+                            <span class="comentario-fecha">Hace 5 días</span>
+                            <div class="comentario-rating">⭐⭐⭐⭐</div>
+                        </div>
+                        <p>"Muy buenas recomendaciones gastronómicas. Probé el ceviche en el restaurante que sugerían y fue espectacular."</p>
+                        <button class="comentario-responder">Responder</button>
+                    </div>
+                </div>
+
+                <!-- Comentario 3 -->
+                <div class="comentario">
+                    <div class="comentario-avatar avatar-3"></div>
+                    <div class="comentario-content">
+                        <div class="comentario-header">
+                            <strong class="comentario-nombre">Laura Fernández</strong>
+                            <span class="comentario-fecha">Hace 1 semana</span>
+                            <div class="comentario-rating">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <p>"El artículo sobre las playas del Caribe me motivó a reservar mis vacaciones. ¡Sigan así!"</p>
+                        <button class="comentario-responder">Responder</button>
+                    </div>
+                </div>
+
+                <!-- Comentario 4 -->
+                <div class="comentario">
+                    <div class="comentario-avatar avatar-4"></div>
+                    <div class="comentario-content">
+                        <div class="comentario-header">
+                            <strong class="comentario-nombre">Pedro Ramírez</strong>
+                            <span class="comentario-fecha">Hace 2 semanas</span>
+                            <div class="comentario-rating">⭐⭐⭐⭐</div>
+                        </div>
+                        <p>"Muy completa la guía de Machu Picchu. Agregaría información sobre las épocas de menor afluencia."</p>
+                        <button class="comentario-responder">Responder</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario para nuevo comentario -->
+            <div class="nuevo-comentario">
+                <h3>Dejanos tu comentario</h3>
+                <form id="comentarioForm">
+                    <div class="form-row">
+                        <input type="text" placeholder="Tu nombre" required>
+                        <input type="email" placeholder="Tu email" required>
+                    </div>
+                    <div class="form-row">
+                        <select required>
+                            <option value="">Calificación</option>
+                            <option value="5">⭐⭐⭐⭐⭐ - Excelente</option>
+                            <option value="4">⭐⭐⭐⭐ - Muy bueno</option>
+                            <option value="3">⭐⭐⭐ - Bueno</option>
+                            <option value="2">⭐⭐ - Regular</option>
+                            <option value="1">⭐ - Malo</option>
+                        </select>
+                    </div>
+                    <textarea rows="4" placeholder="Escribí tu comentario..." required></textarea>
+                    <button type="submit">Publicar comentario</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Scripts -->
+    <script src="js/components.js"></script>
+    <script src="js/dark-mode.js"></script>
+    <script src="js/scroll-reveal.js"></script>
+    <script src="js/blog-comentarios.js"></script>
+</body>
+</html>
