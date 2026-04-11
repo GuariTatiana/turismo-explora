@@ -145,3 +145,18 @@ img {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
+
+/* Para mouse */
+.boton:hover {
+    background-color: blue;
+}
+
+/* Para teclado (accesibilidad) */
+.boton:focus {
+    outline: 3px solid blue;
+}
+
+a:focus, button:focus, input:focus, textarea:focus, select:focus {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 3px;
+}
